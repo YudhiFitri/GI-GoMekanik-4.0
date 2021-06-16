@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Models;
 
 use CodeIgniter\Model;
 
-class RoleModel extends Model{
+class RoleModel extends Model
+{
     protected $table = "roles";
     protected $primaryKey = "id_role";
     protected $allowedFields = [
@@ -14,16 +16,19 @@ class RoleModel extends Model{
         'can_create_user'
     ];
 
-    public function getRole($id){
+    public function getRole($id)
+    {
         return $this->find($id);
     }
 
-    public function getAll(){
+    public function getAll()
+    {
         return $this->findAll();
     }
 
-    public function addRole(){
-        if(isset($_POST['dataAddRole'])){
+    public function addRole()
+    {
+        if (isset($_POST['dataAddRole'])) {
             $dataAddRole = $_POST['dataAddRole'];
             $dataForUpdate = [
                 'name' => $dataAddRole['name'],
@@ -34,15 +39,17 @@ class RoleModel extends Model{
             ];
 
             $rst = $this->save($dataForUpdate);
-            if($rst){
+            if ($rst) {
                 return TRUE;
+            } else {
+                return FALSE;
             }
-            return FALSE;
         }
     }
 
-    public function updateRole(){
-        if(isset($_POST['dataEditRole'])){
+    public function updateRole()
+    {
+        if (isset($_POST['dataEditRole'])) {
             $dataEditRole = $_POST['dataEditRole'];
             $dataForUpdate = [
                 'id_role' => $dataEditRole['id_role'],
@@ -54,11 +61,11 @@ class RoleModel extends Model{
             ];
 
             $rst = $this->save($dataForUpdate);
-            if($rst){
+            if ($rst) {
                 return TRUE;
+            } else {
+                return FALSE;
             }
-            return FALSE;
         }
-    }    
-
+    }
 }
