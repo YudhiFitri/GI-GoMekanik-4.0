@@ -206,7 +206,7 @@
                             // return "<img class='profile-user-img img-fluid img-circle src='" + fotoMekanik + " />"
 
                         } catch (err) {
-                            console.log(err.message);
+                            console.log(err);
                         }
                     }
                 },
