@@ -137,6 +137,7 @@
 <script src="<?= base_url(); ?>/template/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <script type="text/javascript">
+    var id, userName, role, status;
     $(function() {
         const Toast = Swal.mixin({
             toast: true,
@@ -167,8 +168,6 @@
                 });
             })
         }
-
-        var id, userName, role, status;
 
         var dataTable = $('#tableUsers').DataTable({
             responsive: true,
@@ -271,23 +270,25 @@
                 'role': $('.role').val(),
             };
 
-            $.ajax({
-                type: "POST",
-                url: "<?= site_url(); ?>/Users/updateDataUser",
-                data: {
-                    "dataEditUser": dataEditUser
-                },
-                dataType: 'json'
-            }).done(function(dt) {
-                if (dt) {
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'Data User berhasil di-Update'
-                    });
-                    reloadTable();
-                    $('#modalUser').modal('hide');
-                }
-            });
+            console.log('dataEditUser: ', dataEditUser);
+
+            // $.ajax({
+            //     type: "POST",
+            //     url: "<//?= site_url(); ?>/Users/updateDataUser",
+            //     data: {
+            //         "dataEditUser": dataEditUser
+            //     },
+            //     dataType: 'json'
+            // }).done(function(dt) {
+            //     if (dt) {
+            //         Toast.fire({
+            //             icon: 'success',
+            //             title: 'Data User berhasil di-Update'
+            //         });
+            //         reloadTable();
+            //         $('#modalUser').modal('hide');
+            //     }
+            // });
         }
 
         function reloadTable() {
@@ -298,7 +299,7 @@
             let idUser = $('#deleteId').val();
 
             $.ajax({
-                url: '<?= site_url(); ?>/Users/deleteUser/' + idRole,
+                url: '<?= site_url(); ?>/Users/deleteUser/' + idUser,
                 dataType: 'json'
             }).done(function(retVal) {
                 console.log('retVal: ', retVal)
