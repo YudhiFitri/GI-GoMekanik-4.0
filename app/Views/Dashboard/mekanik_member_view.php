@@ -421,10 +421,10 @@
         });
 
         $('#btnDelete').click(function() {
-            let idUser = $('#deleteId').val();
+            let idMekanikMember = $('#deleteId').val();
             console.log('idUser: ', idUser);
             $.ajax({
-                url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idUser,
+                url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idMekanikMember,
                 dataType: 'json'
             }).done(function(retVal) {
                 console.log('retVal: ', retVal)

@@ -138,7 +138,7 @@ class MekanikMember extends BaseController
         }
     }
 
-    public function deleteMekanikMember($id = 0)
+    public function deleteMekanikMember($id)
     {
         $mekanikMemberModel = $this->mekanikMemberModel;
         if ($mekanikMemberModel->find($id)) {
