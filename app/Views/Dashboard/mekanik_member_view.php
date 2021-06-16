@@ -307,14 +307,14 @@
                 type: 'POST',
                 url: '<?= site_url(); ?>/MekanikMember/addMekanikMember',
                 data: {
-                    'dataEditMekanikMember': dataAddMekanikMember
+                    'dataAddMekanikMember': dataAddMekanikMember
                 },
                 dataType: 'json'
             }).done(function(dt) {
                 if (dt) {
                     Toast.fire({
                         icon: 'success',
-                        title: 'Data Mekanik Member berhasil diTambah'
+                        title: 'Data Mekanik Member berhasil ditambah'
                     });
                     reloadTable();
                     $('#modalMekanikMember').modal('hide');
