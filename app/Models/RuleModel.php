@@ -65,8 +65,9 @@ class RuleModel extends Model
             $rst = $this->save($dataForUpdate);
             if ($rst) {
                 return TRUE;
+            } else {
+                return FALSE;
             }
-            return FALSE;
         }
     }
 }
