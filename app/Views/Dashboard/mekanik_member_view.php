@@ -200,8 +200,12 @@
                 {
                     data: 'NIK',
                     render: function(data, type, row, meta) {
-                        console.log('meta: ', meta);
-                        return "<img class='profile-user-img img-fluid img-circle' src='<?= base_url(); ?>/images/mekanik/" + data + ".jpg'" + "/>";
+                        // console.log('meta: ', meta);
+                        if (data !== null) {
+                            return "<img class='profile-user-img img-fluid img-circle' src='<?= base_url(); ?>/images/mekanik/" + data + ".jpg'" + "/>";
+                        } else {
+                            return "<img class='profile-user-img img-fluid img-circle' src='<?= base_url(); ?>/images/mekanik/" + "noimage.jpg" + "/>";
+                        }
 
                     }
                 },
