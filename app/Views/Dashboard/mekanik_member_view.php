@@ -355,9 +355,7 @@
                 }
             });
 
-            function reloadTable() {
-                tableMekanikMember.ajax.reload(null, false);
-            }
+
         }
 
         $('.machine_breakdown_handler').on('switchChange.bootstrapSwitch', function(e, data) {
@@ -417,6 +415,10 @@
                 }
             });
         });
+
+        function reloadTable() {
+            tableMekanikMember.ajax.reload(null, false);
+        }
 
     });
 
