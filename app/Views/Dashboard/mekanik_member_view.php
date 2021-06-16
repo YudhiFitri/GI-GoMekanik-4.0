@@ -395,6 +395,30 @@
             $('input[name="maintenance_handler"]').bootstrapSwitch('state', false);
         }
 
+        $('#btnDelete').click(function() {
+            let idMekanikMember = $('#deleteId').val();
+            console.log('idUser: ', idUser);
+            $.ajax({
+                url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idMekanikMember,
+                dataType: 'json'
+            }).done(function(retVal) {
+                console.log('retVal: ', retVal)
+                if (retVal.status == true) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: retVal.msg
+                    });
+                    $('#modalDelete').modal('hide');
+                    reloadTable();
+                } else {
+                    Toast.fire({
+                        icon: 'warning',
+                        title: retVal.msg
+                    });
+                }
+            });
+        });
+
     });
 
     function editMekanikMember(id) {
@@ -419,31 +443,6 @@
                 $('#modalMekanikMember').modal('show');
             }
         });
-
-        $('#btnDelete').click(function() {
-            let idMekanikMember = $('#deleteId').val();
-            console.log('idUser: ', idUser);
-            // $.ajax({
-            //     url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idMekanikMember,
-            //     dataType: 'json'
-            // }).done(function(retVal) {
-            //     console.log('retVal: ', retVal)
-            //     if (retVal.status == true) {
-            //         Toast.fire({
-            //             icon: 'success',
-            //             title: retVal.msg
-            //         });
-            //         $('#modalDelete').modal('hide');
-            //         reloadTable();
-            //     } else {
-            //         Toast.fire({
-            //             icon: 'warning',
-            //             title: retVal.msg
-            //         });
-            //     }
-            // });
-        });
-
     }
 
     function deleteMekanikMember(id) {
