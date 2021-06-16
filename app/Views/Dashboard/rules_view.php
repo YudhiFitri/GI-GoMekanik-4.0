@@ -129,6 +129,7 @@
 <script src="<?= base_url(); ?>/template/plugins/sweetalert2/sweetalert2.min.js"></script>
 
 <script type="text/javascript">
+    var id, userName, role, status;
     $(function() {
         const Toast = Swal.mixin({
             toast: true,
@@ -159,8 +160,6 @@
                 });
             })
         }
-
-        var id, userName, role, status;
 
         var dataTable = $('#tableRules').DataTable({
             responsive: true,
