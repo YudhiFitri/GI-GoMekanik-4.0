@@ -287,10 +287,11 @@
         }
 
         $('#btnDelete').click(function() {
-            let idUser = $('#deleteId').val();
+            // let idUser = $('#deleteId').val();
+            let idRule = $('#deleteId').val();
 
             $.ajax({
-                url: '<?= site_url(); ?>/Rules/deleteRule/' + idRole,
+                url: '<?= site_url(); ?>/Rules/deleteRule/' + idRule,
                 dataType: 'json'
             }).done(function(retVal) {
                 console.log('retVal: ', retVal)
