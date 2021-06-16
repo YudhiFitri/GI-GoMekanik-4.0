@@ -307,7 +307,7 @@
                 type: 'POST',
                 url: '<?= site_url(); ?>/MekanikMember/addMekanikMember',
                 data: {
-                    'dataEditMekanikMember': dataEditMekanikMember
+                    'dataEditMekanikMember': dataAddMekanikMember
                 },
                 dataType: 'json'
             }).done(function(dt) {
