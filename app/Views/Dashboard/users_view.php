@@ -272,23 +272,23 @@
 
             console.log('dataEditUser: ', dataEditUser);
 
-            // $.ajax({
-            //     type: "POST",
-            //     url: "<//?= site_url(); ?>/Users/updateDataUser",
-            //     data: {
-            //         "dataEditUser": dataEditUser
-            //     },
-            //     dataType: 'json'
-            // }).done(function(dt) {
-            //     if (dt) {
-            //         Toast.fire({
-            //             icon: 'success',
-            //             title: 'Data User berhasil di-Update'
-            //         });
-            //         reloadTable();
-            //         $('#modalUser').modal('hide');
-            //     }
-            // });
+            $.ajax({
+                type: "POST",
+                url: "<?= site_url(); ?>/Users/updateDataUser",
+                data: {
+                    "dataEditUser": dataEditUser
+                },
+                dataType: 'json'
+            }).done(function(dt) {
+                if (dt) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Data User berhasil di-Update'
+                    });
+                    reloadTable();
+                    $('#modalUser').modal('hide');
+                }
+            });
         }
 
         function reloadTable() {
