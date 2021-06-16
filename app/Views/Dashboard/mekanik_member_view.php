@@ -420,10 +420,36 @@
             }
         });
 
+        $('#btnDelete').click(function() {
+            let idUser = $('#deleteId').val();
+
+            $.ajax({
+                url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idUser,
+                dataType: 'json'
+            }).done(function(retVal) {
+                console.log('retVal: ', retVal)
+                if (retVal.status == true) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: retVal.msg
+                    });
+                    $('#modalDelete').modal('hide');
+                    reloadTable();
+                } else {
+                    Toast.fire({
+                        icon: 'warning',
+                        title: retVal.msg
+                    });
+                }
+            })
+        });
 
     }
 
-    function deleteMekanikMember(id) {}
+    function deleteMekanikMember(id) {
+        $('#deleteId').val(id);
+        $('#modalDelete').modal('show');
+    }
 </script>
 
 <?= $this->endSection(); ?>

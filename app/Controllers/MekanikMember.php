@@ -137,4 +137,23 @@ class MekanikMember extends BaseController
             echo json_encode($rst);
         }
     }
+
+    public function deleteMekanikMember($id = 0)
+    {
+        $mekanikMemberModel = $this->mekanikMemberModel;
+        if ($mekanikMemberModel->find($id)) {
+            $mekanikMemberModel->delete($id);
+
+            $retVal = [
+                'status' => TRUE,
+                'msg' => 'Delete Mekanik Member berhasil!'
+            ];
+        } else {
+            $retVal = [
+                'status' => FALSE,
+                'msg' => 'Delete Mekanik Member, karena ID tidak ditemukan!'
+            ];
+        }
+        echo json_encode($retVal);
+    }
 }
