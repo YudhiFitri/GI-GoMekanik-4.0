@@ -200,10 +200,14 @@
                 {
                     data: 'NIK',
                     render: function(data, type, row, meta) {
-                        let fotoMekanik = '<?= base_url("/images/mekanik"); ?>/' + data + ".jpg";
-                        console.log('fotoMekanik: ', fotoMekanik);
+                        try {
+                            let fotoMekanik = '<?= base_url("/images/mekanik"); ?>/' + data + ".jpg";
+                            // return "<img class='profile-user-img img-fluid img-circle' src='<//?= base_url(); ?>/images/mekanik/" + data + ".jpg'" + "/>";
+                            return "<img class='profile-user-img img-fluid img-circle src='" + fotoMekanik + " />"
 
-                        return "<img class='profile-user-img img-fluid img-circle' src='<?= base_url(); ?>/images/mekanik/" + data + ".jpg'" + "/>";
+                        } catch (err) {
+                            console.log(err.message);
+                        }
                     }
                 },
                 {
