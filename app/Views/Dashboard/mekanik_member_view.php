@@ -423,25 +423,25 @@
         $('#btnDelete').click(function() {
             let idMekanikMember = $('#deleteId').val();
             console.log('idUser: ', idUser);
-            $.ajax({
-                url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idMekanikMember,
-                dataType: 'json'
-            }).done(function(retVal) {
-                console.log('retVal: ', retVal)
-                if (retVal.status == true) {
-                    Toast.fire({
-                        icon: 'success',
-                        title: retVal.msg
-                    });
-                    $('#modalDelete').modal('hide');
-                    reloadTable();
-                } else {
-                    Toast.fire({
-                        icon: 'warning',
-                        title: retVal.msg
-                    });
-                }
-            })
+            // $.ajax({
+            //     url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idMekanikMember,
+            //     dataType: 'json'
+            // }).done(function(retVal) {
+            //     console.log('retVal: ', retVal)
+            //     if (retVal.status == true) {
+            //         Toast.fire({
+            //             icon: 'success',
+            //             title: retVal.msg
+            //         });
+            //         $('#modalDelete').modal('hide');
+            //         reloadTable();
+            //     } else {
+            //         Toast.fire({
+            //             icon: 'warning',
+            //             title: retVal.msg
+            //         });
+            //     }
+            // });
         });
 
     }
