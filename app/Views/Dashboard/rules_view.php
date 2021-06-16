@@ -262,11 +262,11 @@
                 'icon': $('.icon').val(),
             };
             console.log('status: ' + status);
-            console.log('dataEditRule: ' + dataEditRule);
+            console.log('dataEditRule: ', dataEditRule);
 
             // $.ajax({
             //     type: "POST",
-            //     url: "<//?= site_url(); ?>/Rules/updateDataRule",
+            //     url: "<?= site_url(); ?>/Rules/updateDataRule",
             //     data: {
             //         "dataEditRule": dataEditRule
             //     },
