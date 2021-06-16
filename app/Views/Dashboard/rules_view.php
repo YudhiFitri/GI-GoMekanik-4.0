@@ -331,7 +331,7 @@
             console.log('dt: ', dt);
             if (dt != null) {
                 // addRoles();
-                $('.id_rule').val(dt.id);
+                $('.id_rule').val(id);
                 $('.role').val(dt.id_role);
                 $('.menu').val(dt.menu);
                 $('.icon').val(dt.icon);
