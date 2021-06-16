@@ -234,24 +234,26 @@
                 'icon': $('.icon').val(),
             };
 
-            $.ajax({
-                type: "POST",
-                url: "<?= site_url(); ?>/Rules/addDataRule",
-                data: {
-                    "dataAddRule": dataAddRule
-                },
-                dataType: 'json'
-            }).done(function(dt) {
-                if (dt) {
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'Data Rule berhasil di-Update'
-                    });
-                    reloadTable();
-                    clearModal();
-                    $('.role').focus();
-                }
-            });
+            console.log('dataAddRule: ', dataAddRule);
+
+            // $.ajax({
+            //     type: "POST",
+            //     url: "<//?= site_url(); ?>/Rules/addDataRule",
+            //     data: {
+            //         "dataAddRule": dataAddRule
+            //     },
+            //     dataType: 'json'
+            // }).done(function(dt) {
+            //     if (dt) {
+            //         Toast.fire({
+            //             icon: 'success',
+            //             title: 'Data Rule berhasil di-Update'
+            //         });
+            //         reloadTable();
+            //         clearModal();
+            //         $('.role').focus();
+            //     }
+            // });
         }
 
         function updateRule() {
