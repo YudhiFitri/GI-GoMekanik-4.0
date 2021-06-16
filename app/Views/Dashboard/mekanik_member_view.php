@@ -74,7 +74,7 @@
                             </div>
 
                         </div>
-
+                        <?= $this->include('layout/partial/modal'); ?>
                         <div class="modal fade" id="modalMekanikMember">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
