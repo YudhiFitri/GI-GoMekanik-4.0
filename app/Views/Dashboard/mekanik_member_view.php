@@ -422,7 +422,7 @@
 
         $('#btnDelete').click(function() {
             let idUser = $('#deleteId').val();
-
+            console.log('idUser: ', idUser);
             $.ajax({
                 url: '<?= site_url(); ?>/MekanikMember/deleteMekanikMember/' + idUser,
                 dataType: 'json'
