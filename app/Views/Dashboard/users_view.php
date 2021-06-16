@@ -211,7 +211,7 @@
         });
 
         function clearModal() {
-            $('.userName').val('');
+            $('.user_name').val('');
             $('.pwd').prop('disabled', false);
             $('.pwd').val('');
             $('.role').val('');
