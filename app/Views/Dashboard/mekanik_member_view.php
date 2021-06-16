@@ -189,6 +189,7 @@
 
         var tableMekanikMember = $('#tableMekanikMember').DataTable({
             responsive: true,
+            dom: '<"toolbar">frtip',
             ajax: '<?= site_url(); ?>/MekanikMember/getAllMekanikMember',
             columns: [{
                     data: 'id_mekanik_member'
@@ -265,6 +266,13 @@
                     $('input[name="maintenance"]').bootstrapSwitch('state', (cellNodeUser == 0 ? false : true));
                 }
             }
+        });
+
+        $("div.toolbar").html("<button class='btn btn-outline-primary btn-sm shadow-sm' id='btnAddNewMekanikMember'><i class='fas fa-user'></i> Add Mekanik Member</button>");
+        $('#btnAddNewMekanikMember').click(function() {
+            status = "add";
+            $('#status').html('Add New');
+            $('#modalMekanikMember').modal('show');
         });
 
         $("input[data-bootstrap-switch]").each(function() {
