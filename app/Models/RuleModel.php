@@ -39,7 +39,7 @@ class RuleModel extends Model
             $dataForUpdate = [
                 'id_role' => $dataAddRule['id_role'],
                 'menu' => $dataAddRule['menu'],
-                'icon' => MD5($dataAddRule['icon'])
+                'icon' => $dataAddRule['icon']
 
             ];
 
