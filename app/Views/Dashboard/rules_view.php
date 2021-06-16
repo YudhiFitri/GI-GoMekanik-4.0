@@ -264,23 +264,23 @@
             console.log('status: ' + status);
             console.log('dataEditRule: ', dataEditRule);
 
-            // $.ajax({
-            //     type: "POST",
-            //     url: "</?= site_url(); ?>/Rules/updateDataRule",
-            //     data: {
-            //         "dataEditRule": dataEditRule
-            //     },
-            //     dataType: 'json'
-            // }).done(function(dt) {
-            //     if (dt) {
-            //         Toast.fire({
-            //             icon: 'success',
-            //             title: 'Data Rule berhasil di-Update'
-            //         });
-            //         reloadTable();
-            //         $('#modalRule').modal('hide');
-            //     }
-            // });
+            $.ajax({
+                type: "POST",
+                url: "<?= site_url(); ?>/Rules/updateDataRule",
+                data: {
+                    "dataEditRule": dataEditRule
+                },
+                dataType: 'json'
+            }).done(function(dt) {
+                if (dt) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Data Rule berhasil di-Update'
+                    });
+                    reloadTable();
+                    $('#modalRule').modal('hide');
+                }
+            });
         }
 
         function reloadTable() {
