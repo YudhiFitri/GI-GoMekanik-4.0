@@ -289,6 +289,39 @@
             }
         });
 
+        function addNewMekanikMember() {
+            let dataAddMekanikMember = {
+                'NIK': $(".nik").val(),
+                'Nama': $(".nama").val(),
+                'Inisial': $(".inisial").val(),
+                'Bagian': $(".bagian").val(),
+                'Shift': $('.shift').val(),
+                'isMachineBreakdown': isMachineBreakdown,
+                'isQuickChange': isQCO,
+                'isMaintenance': isMaintenance
+            };
+
+            console.log('isMaintenance: ', isMaintenance);
+
+            $.ajax({
+                type: 'POST',
+                url: '<?= site_url(); ?>/MekanikMember/addMekanikMember',
+                data: {
+                    'dataEditMekanikMember': dataEditMekanikMember
+                },
+                dataType: 'json'
+            }).done(function(dt) {
+                if (dt) {
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Data Mekanik Member berhasil diTambah'
+                    });
+                    reloadTable();
+                    $('#modalMekanikMember').modal('hide');
+                }
+            });
+        }
+
         function updateMekanikMember() {
             let dataEditMekanikMember = {
                 'id_mekanik_member': $(".id_mekanik_member").val(),

@@ -74,6 +74,37 @@ class MekanikMember extends BaseController
         echo json_encode($rst);
     }
 
+    public function addMekanikMember()
+    {
+        $mekanikMemberModel = $this->mekanikMemberModel;
+
+        if (isset($_POST['dataAddMekanikMember'])) {
+            $dataAddMM = $_POST['dataAddMekanikMember'];
+            $nik = $dataAddMM['NIK'];
+            $nama = $dataAddMM['Nama'];
+            $inisial = $dataAddMM['Inisial'];
+            $bagian = $dataAddMM['Bagian'];
+            $shift = $dataAddMM['Shift'];
+            $isMachineBreakdown = $dataAddMM['isMachineBreakdown'];
+            $isQCO = $dataAddMM['isQuickChange'];
+            $isMaintenance = $dataAddMM['isMaintenance'];
+
+            $dataForAdd = [
+                'NIK' => $nik,
+                'Nama' => $nama,
+                'Inisial' => $inisial,
+                'Bagian' => $bagian,
+                'Shift' => $shift,
+                'isMachineBreakdown' => $isMachineBreakdown,
+                'isQuickChange' => $isQCO,
+                'isMaintenance' => $isMaintenance
+            ];
+
+            $rst = $mekanikMemberModel->save($dataForAdd);
+            echo json_encode($rst);
+        }
+    }
+
     public function updateMekanikMember()
     {
         $mekanikMemberModel = $this->mekanikMemberModel;
