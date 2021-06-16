@@ -37,7 +37,7 @@ class RuleModel extends Model
         if (isset($_POST['dataAddRule'])) {
             $dataAddRule = $_POST['dataAddRule'];
             $dataForUpdate = [
-                'id_role' => $dataAddRule['id_rule'],
+                'id_role' => $dataAddRule['id_role'],
                 'menu' => $dataAddRule['menu'],
                 'icon' => MD5($dataAddRule['icon'])
 
