@@ -8,7 +8,7 @@ class RuleModel extends Model
 {
     protected $table = 'rules';
     protected $primaryKey = 'id_rule';
-    protected $allowedFileds = [
+    protected $allowedFields = [
         'id_rule',
         'id_role',
         'menu',

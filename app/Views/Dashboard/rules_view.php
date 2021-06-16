@@ -319,6 +319,7 @@
     });
 
     function editRule(id) {
+        console.log('id: ', id);
         status = "edit";
         $.ajax({
             type: 'GET',

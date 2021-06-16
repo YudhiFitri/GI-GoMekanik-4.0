@@ -10,14 +10,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>GI-GoMekanik Web App</title>
+    <title>GI-GoMekanik 4.0 Web App</title>
 
     <?= $this->include('layout/partial/css'); ?>
     <!-- DataTable -->
     <!-- <link rel="stylesheet" href="<//?= base_url(); ?>/template/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css"> -->
 
     <?= $this->include('layout/partial/js'); ?>
-    
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -36,7 +36,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div id="sidebar-overlay"></div>
     </div>
 
-    
+
 </body>
 
 </html>
